@@ -33,7 +33,10 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+  scroll-behavior: smooth; 
+  scroll-padding-top: 80px;
+}
 
 body {
   background-color: var(--bg-void);
@@ -1879,7 +1882,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-inner, .footer-bottom {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 .footer-inner {
@@ -1983,6 +1986,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   letter-spacing: 1px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .footer-links a.interactive-link::before {
@@ -2029,7 +2033,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   margin: 40px 0 20px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .ancient-divider.absolute-top {
@@ -2038,12 +2043,15 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   transform: translateY(-50%);
   margin: 0;
+  pointer-events: none;
 }
 
 .ancient-ornament {
   width: 100%;
-  height: auto;
+  max-height: 48px;
+  object-fit: contain;
   display: block;
+  pointer-events: none;
 }
 
 .footer-bottom {
