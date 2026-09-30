@@ -24,7 +24,7 @@ const tracks = [
   {
     num: '03',
     code: 'HEALTH',
-    title: 'Healthcare & Assistive Tech',
+    title: 'Healthcare, Wellbeing & Assistive Technologies',
     desc: 'Affordable healthcare delivery, preventive care, wellness, and accessibility.',
     tags: ['MedTech', 'AI/ML', 'Telemedicine'],
     accent: '#f5b736',
@@ -32,7 +32,7 @@ const tracks = [
   {
     num: '04',
     code: 'EDU',
-    title: 'Education & Future of Work',
+    title: 'Education, Skilling & Future of Work',
     desc: 'Learning platforms, skill development, employability, and future-of-work technology.',
     tags: ['EdTech', 'AI Tutors', 'VR/AR'],
     accent: '#d4941a',
@@ -40,7 +40,7 @@ const tracks = [
   {
     num: '05',
     code: 'ENERGY',
-    title: 'Energy & Climate Action',
+    title: 'Energy, Environment & Climate Action',
     desc: 'Environmental sustainability, energy efficiency, climate resilience, and conservation.',
     tags: ['Renewable', 'EV', 'ClimateTech'],
     accent: '#a06b0c',
@@ -72,53 +72,21 @@ const Tracks = () => {
         }
       );
 
-      /* ── Scrubbed Bento: each card clips open from its corner ── */
-      cardRefs.current.forEach((card, i) => {
-        if (!card) return;
-
-        // Determine clip origin based on position in 3-col grid
-        const col = i % 3;
-        const row = Math.floor(i / 3);
-        const origins = ['top left', 'top center', 'top right'];
-        const origin  = origins[col];
-
-        // Start: clipped + scaled down
-        gsap.set(card, {
-          clipPath: 'inset(100% 0% 0% 0% round 4px)',
-          scale: 0.88,
-          transformOrigin: origin,
-        });
-
-        // Scrubbed reveal
-        gsap.to(card, {
-          clipPath: 'inset(0% 0% 0% 0% round 4px)',
-          scale: 1,
-          ease: 'power2.inOut',
+      /* ── Track Cards: optimized hardware-accelerated stagger ── */
+      gsap.fromTo(cardRefs.current,
+        { autoAlpha: 0, y: 40 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power3.out',
           scrollTrigger: {
             trigger: bentoRef.current,
-            start: `top+=${row * 80} 80%`,
-            end:   `top+=${row * 80 + 260} 60%`,
-            scrub: 1,
+            start: 'top 80%',
           },
-        });
-
-        // Inner content fades up after reveal
-        const inner = card.querySelector('.tbcard__inner');
-        if (inner) {
-          gsap.fromTo(inner,
-            { autoAlpha: 0, y: 20 },
-            {
-              autoAlpha: 1, y: 0, duration: 0.6, ease: 'power3.out',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top 70%',
-                toggleActions: 'play none none none',
-              },
-              delay: (i % 3) * 0.1,
-            }
-          );
         }
-      });
+      );
 
     }, sectionRef);
 

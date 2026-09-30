@@ -2,51 +2,65 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const outcomes = [
-  { icon: '01', title: 'Hands-On Experience', desc: 'Develop technology-driven solutions to real-world challenges across diverse domains.' },
-  { icon: '02', title: 'Technical Growth', desc: 'Enhance your technical knowledge and coding abilities under competitive pressure.' },
-  { icon: '03', title: 'Problem-Solving', desc: 'Strengthen your analytical and creative problem-solving skills in a live environment.' },
-  { icon: '04', title: 'Teamwork', desc: 'Experience collaborative development during an intensive 24-hour challenge.' },
-  { icon: '05', title: 'Networking', desc: 'Connect with industry experts, mentors, innovators, faculty, and fellow participants.' },
-  { icon: '06', title: 'Prototype Dev', desc: 'Transform your initial idea into a functional and demonstrable solution.' },
-  { icon: '07', title: 'Tech Exposure', desc: 'Explore modern technologies, innovation methodologies, and practical software practices.' },
-  { icon: '08', title: 'Mentorship', desc: 'Shortlisted teams receive support from mentors throughout the offline hackathon.' },
+  { icon: '01', title: 'Hands-On Experience' },
+  { icon: '02', title: 'Technical Growth' },
+  { icon: '03', title: 'Problem-Solving' },
+  { icon: '04', title: 'Teamwork' },
+  { icon: '05', title: 'Networking' },
+  { icon: '06', title: 'Prototype Development' },
+  { icon: '07', title: 'Emerging Technology Exposure' },
+  { icon: '08', title: 'Mentorship' },
 ];
 
 const Outcomes = () => {
   return (
     <section id="outcomes">
-      <div className="section">
+      <div className="section" style={{ maxWidth: '800px', margin: '0 auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          style={{ marginBottom: '60px' }}
+          style={{ marginBottom: '50px', textAlign: 'center' }}
         >
-          <p className="section-label">Participant Benefits</p>
+          <p className="section-label">Participant Outcomes</p>
           <h2 className="section-title">What You'll Gain</h2>
-          <p className="section-desc">
-            More than a competition — Code Yudh is a launchpad for your career, skills, and network.
-          </p>
         </motion.div>
 
-        <div className="outcomes-grid">
+        <div className="outcomes-list" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {outcomes.map((item, i) => (
             <motion.div
               key={i}
-              className="outcome-card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
+              className="outcome-bar"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
               viewport={{ once: true }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '24px',
+                background: 'rgba(15, 12, 22, 0.4)',
+                border: '1px solid rgba(255, 255, 255, 0.05)',
+                borderRadius: '12px',
+                padding: '20px 30px',
+                backdropFilter: 'blur(10px)',
+              }}
+              whileHover={{
+                x: 10,
+                background: 'rgba(245, 183, 54, 0.05)',
+                borderColor: 'rgba(245, 183, 54, 0.3)',
+                boxShadow: '0 10px 20px rgba(0,0,0,0.3)',
+              }}
             >
-              <span className="outcome-icon" style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', fontWeight: 700, color: 'var(--gold-400)' }}>{item.icon}</span>
-              <div className="outcome-title">{item.title}</div>
-              <p className="outcome-desc">{item.desc}</p>
+              <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.4rem', fontWeight: 800, color: 'var(--gold-400)', opacity: 0.8 }}>{item.icon}</span>
+              <div style={{ fontFamily: 'var(--font-body)', fontSize: '1.1rem', fontWeight: 600, color: '#fff', letterSpacing: '0.5px' }}>{item.title}</div>
             </motion.div>
           ))}
         </div>
+      </div>
 
+      <div className="section">
         {/* Technology Playground */}
         <motion.div
           style={{ marginTop: '100px' }}

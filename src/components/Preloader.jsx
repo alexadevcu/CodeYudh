@@ -1,29 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import LogoArrow from '../assets/arrow.png';
 
 const Preloader = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [done, setDone] = useState(false);
+  const [showReveal, setShowReveal] = useState(false);
 
   useEffect(() => {
+    // Slower, cinematic load curve
     const timer = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
           setTimeout(() => {
-            setDone(true);
+            setShowReveal(true);
             setTimeout(() => {
               setLoading(false);
               if (onComplete) onComplete();
-            }, 900);
-          }, 300);
+            }, 1800); // Hold the reveal for 1.8s
+          }, 300); // Pause at 100 for 0.3s
           return 100;
         }
-        return Math.min(100, prev + Math.floor(Math.random() * 10) + 4);
+        // Ease-out progress simulation
+        const increment = prev > 80 ? 1 : prev > 50 ? 3 : 5;
+        return Math.min(100, prev + increment);
       });
-    }, 85);
+    }, 45);
     return () => clearInterval(timer);
   }, [onComplete]);
 
@@ -33,9 +35,9 @@ const Preloader = ({ onComplete }) => {
         <motion.div
           className="pl-overlay"
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0, transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
+          exit={{ opacity: 0, transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } }}
         >
-          {/* Radial background glow */}
+          {/* Ambient Glows */}
           <div className="pl-bg-glow" />
           <div className="pl-bg-glow pl-bg-glow--2" />
 
@@ -46,92 +48,65 @@ const Preloader = ({ onComplete }) => {
             transition={{ duration: 2.5, repeat: Infinity, ease: 'linear', repeatDelay: 0.5 }}
           />
 
-          {/* Corner brackets */}
-          <div className="pl-corner pl-corner--tl" />
-          <div className="pl-corner pl-corner--tr" />
-          <div className="pl-corner pl-corner--bl" />
-          <div className="pl-corner pl-corner--br" />
-
-          {/* Main content */}
-          <div className="pl-content">
-
-            {/* Giant Arrow Emblem */}
-            <motion.div
-              className="pl-emblem"
-              initial={{ scale: 0, opacity: 0, rotate: -90 }}
-              animate={done
-                ? { scale: [1, 1.4, 0], opacity: [1, 1, 0], rotate: [0, 10, 0] }
-                : { scale: 1, opacity: 1, rotate: 0 }
-              }
-              transition={done
-                ? { duration: 0.7, ease: [0.16, 1, 0.3, 1] }
-                : { duration: 0.9, delay: 0.1, type: 'spring', stiffness: 100, damping: 14 }
-              }
-            >
-              {/* Spinning rings */}
-              <div className="pl-ring pl-ring--1" />
-              <div className="pl-ring pl-ring--2" />
-              <div className="pl-ring pl-ring--3" />
-              {/* Glow orb */}
-              <div className="pl-orb-glow" />
-              {/* Arrow image — large */}
-              <img src={LogoArrow} alt="Code Yudh" className="pl-arrow-img" />
-            </motion.div>
-
-            {/* Brand name */}
-            <motion.div
-              className="pl-brand"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: done ? 0 : 1, y: done ? -10 : 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              <span className="pl-brand-code">CODE</span>
-              <span className="pl-brand-yudh">YUDH</span>
-            </motion.div>
-
-            {/* Tagline */}
-            <motion.p
-              className="pl-tagline"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: done ? 0 : 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              CHANDIGARH UNIVERSITY · NATIONAL HACKATHON 2026
-            </motion.p>
-
-            {/* Progress section */}
-            <motion.div
-              className="pl-progress-wrap"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: done ? 0 : 1, y: done ? 10 : 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-            >
-              <div className="pl-bar-track">
+          <div className="pl-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', width: '100%' }}>
+            
+            <AnimatePresence mode="wait">
+              {!showReveal ? (
+                // --- PHASE 1: GIANT COUNTER ---
                 <motion.div
-                  className="pl-bar-fill"
-                  style={{ width: `${progress}%` }}
-                />
-                {/* Moving glow dot on bar */}
+                  key="counter"
+                  className="pl-cinematic-counter"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.1, filter: 'blur(10px)', transition: { duration: 0.6, ease: 'power2.in' } }}
+                >
+                  <span className="pl-counter-num">{progress}</span>
+                  <span className="pl-counter-pct">%</span>
+                  <div className="pl-counter-label">INITIALIZING BATTLEFIELD</div>
+                  
+                  {/* Subtle progress line below counter */}
+                  <div className="pl-minimal-bar">
+                    <motion.div className="pl-minimal-fill" style={{ width: `${progress}%` }} />
+                  </div>
+                </motion.div>
+              ) : (
+                // --- PHASE 2: GLOWING BRAND REVEAL ---
                 <motion.div
-                  className="pl-bar-dot"
-                  style={{ left: `${progress}%` }}
-                />
-              </div>
-              <div className="pl-percent-row">
-                <span className="pl-percent-label">LOADING</span>
-                <span className="pl-percent-num">{progress}%</span>
-              </div>
-            </motion.div>
+                  key="reveal"
+                  className="pl-cinematic-reveal"
+                  initial={{ opacity: 0, scale: 0.8, filter: 'blur(20px)' }}
+                  animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                  transition={{ duration: 1.2, ease: 'easeOut' }}
+                >
+                  <motion.div 
+                    className="pl-reveal-brand"
+                    animate={{ textShadow: ['0 0 0px #F5B736', '0 0 40px #F5B736', '0 0 20px #F5B736'] }}
+                    transition={{ duration: 1.5, ease: 'easeInOut' }}
+                  >
+                    <span className="pl-reveal-code">CODE</span>
+                    <span className="pl-reveal-yudh">YUDH</span>
+                  </motion.div>
+                  <motion.p
+                    className="pl-reveal-tagline"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                  >
+                    THE ULTIMATE HACKATHON
+                  </motion.p>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
           </div>
 
-          {/* Flash burst on complete */}
-          {done && (
+          {/* Flash burst on final exit */}
+          {showReveal && (
             <motion.div
               className="pl-burst"
-              initial={{ scale: 0, opacity: 0.8 }}
-              animate={{ scale: 4, opacity: 0 }}
-              transition={{ duration: 0.7, ease: 'easeOut' }}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: [0, 5], opacity: [0, 0.5, 0] }}
+              transition={{ delay: 1.2, duration: 1, ease: 'easeOut' }}
             />
           )}
         </motion.div>

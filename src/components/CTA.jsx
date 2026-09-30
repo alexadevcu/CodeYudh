@@ -37,7 +37,7 @@ const CTA = () => {
           </div>
 
           <div className="cta-btns">
-            <a href="https://unstop.com/" target="_blank" rel="noopener noreferrer">
+            <a href="https://unstop.com/p/code-yudh-battle-of-codes-chandigarh-university-cu-ajitgarh-punjab-1762892" target="_blank" rel="noopener noreferrer">
               <button className="btn-primary">Register Now</button>
             </a>
             <a href="#tracks">
@@ -46,7 +46,7 @@ const CTA = () => {
           </div>
 
           <p style={{ marginTop: '48px', fontFamily: 'var(--font-heading)', fontSize: '0.72rem', letterSpacing: '3px', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
-            Organized by the Department of Computer Science and Engineering · Chandigarh University
+            Organized by Department of CSE – Takshashila • Chandigarh University
           </p>
         </motion.div>
       </div>

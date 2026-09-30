@@ -140,6 +140,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.55 }}
             >
               <p className="hero-subtitle">THE ULTIMATE 24-HOUR BATTLE OF CODE &amp; INNOVATION</p>
+              <p className="hero-subtitle" style={{ fontSize: '0.6rem', color: 'rgba(200, 190, 165, 0.75)', marginTop: '4px' }}>Organized by Department of CSE – Takshashila &nbsp;•&nbsp; Chandigarh University</p>
               <div className="hero-date-line">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" />
@@ -149,29 +150,57 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Countdown */}
+          {/* Countdown - Cyber/HUD Style */}
           <motion.div
-            className="hero-countdown"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            className="hero-countdown-premium"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.75 }}
           >
-            <p className="hero-countdown-label">HACKATHON BEGINS IN</p>
-            <div className="hero-countdown-grid">
+            {/* Structural HUD brackets */}
+            <div className="hud-bracket hud-bracket-tl" />
+            <div className="hud-bracket hud-bracket-tr" />
+            <div className="hud-bracket hud-bracket-bl" />
+            <div className="hud-bracket hud-bracket-br" />
+
+            <div className="hud-label-wrap">
+              <span className="hud-label-line"></span>
+              <p className="hud-label">SYSTEM ONLINE // T-MINUS</p>
+              <span className="hud-label-line"></span>
+            </div>
+
+            <div className="hud-timer-grid">
               {[
-                { val: pad(timeLeft.days), unit: 'DAYS' },
-                { val: pad(timeLeft.hours), unit: 'HRS' },
-                { val: pad(timeLeft.minutes), unit: 'MIN' },
-                { val: pad(timeLeft.seconds), unit: 'SEC' },
-              ].map(({ val, unit }, i) => (
-                <React.Fragment key={unit}>
-                  {i > 0 && <span className="hero-cd-sep">:</span>}
-                  <div className="hero-cd-box">
-                    <span className="hero-cd-num">{val}</span>
-                    <span className="hero-cd-unit">{unit}</span>
+                { val: timeLeft.days, unit: 'DAYS', max: 30 },
+                { val: timeLeft.hours, unit: 'HRS', max: 24 },
+                { val: timeLeft.minutes, unit: 'MIN', max: 60 },
+                { val: timeLeft.seconds, unit: 'SEC', max: 60 },
+              ].map(({ val, unit, max }) => {
+                const percentage = (val / max) * 100;
+                // Circumference for r=30 is roughly 188.4
+                const strokeDasharray = 188.4;
+                const strokeDashoffset = strokeDasharray - (strokeDasharray * percentage) / 100;
+
+                return (
+                  <div className="hud-timer-node" key={unit}>
+                    <svg className="hud-ring-svg" width="80" height="80" viewBox="0 0 70 70">
+                      {/* Background track */}
+                      <circle cx="35" cy="35" r="30" fill="none" className="hud-ring-bg" strokeWidth="2" />
+                      {/* Animated fill */}
+                      <circle 
+                        cx="35" cy="35" r="30" fill="none" 
+                        className="hud-ring-fill" strokeWidth="3.5"
+                        style={{ strokeDasharray, strokeDashoffset }}
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    <div className="hud-timer-content">
+                      <span className="hud-val">{pad(val)}</span>
+                      <span className="hud-unit">{unit}</span>
+                    </div>
                   </div>
-                </React.Fragment>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
 
@@ -182,7 +211,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            <MagneticButton className="btn-gold" href="https://unstop.com/">
+            <MagneticButton className="btn-gold" href="https://unstop.com/p/code-yudh-battle-of-codes-chandigarh-university-cu-ajitgarh-punjab-1762892">
               <span className="btn-shimmer" />
               <span>REGISTER ON UNSTOP</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -216,18 +245,6 @@ const Hero = () => {
               <span className="hero-stat-lbl">Battlefields</span>
             </div>
           </motion.div>
-
-          {/* Organizer credit */}
-          <motion.div
-            className="hero-organizer"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-          >
-            <div className="hero-organizer-text">
-              <span className="hero-organizer-name">Organized by Department of CSE – Takshashila &nbsp;•&nbsp; Chandigarh University</span>
-            </div>
-          </motion.div>
         </div>
 
         {/* RIGHT — Warrior character */}
@@ -240,7 +257,14 @@ const Hero = () => {
           {/* Decorative ring behind character */}
           <div className="hero-char-ring" />
           <div className="hero-char-ring hero-char-ring--2" />
-          <img src={Guy1} alt="Code Yudh Warrior" className="hero-char-img" />
+          <motion.img 
+            src={Guy1} 
+            alt="Code Yudh Warrior" 
+            className="hero-char-img"
+            style={{ scaleX: -1 }}
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+          />
           <div className="hero-char-glow" />
         </motion.div>
       </div>

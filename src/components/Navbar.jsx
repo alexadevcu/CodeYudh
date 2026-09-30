@@ -16,8 +16,6 @@ const Navbar = () => {
       <nav className="floating-nav-pill">
         <a href="#home" className="nav-logo-brand">
           <img src={CULogo} alt="Chandigarh University" className="nav-cu-logo" />
-          <div className="nav-logo-divider" />
-          <span className="nav-logo-text">CODE <span className="logo-accent">YUDH</span></span>
         </a>
         
         <div className={`nav-links-center ${menuOpen ? 'nav-links-mobile-active' : ''}`}>
@@ -30,7 +28,7 @@ const Navbar = () => {
         </div>
 
         <div className="nav-actions">
-          <a href="https://unstop.com/" target="_blank" rel="noopener noreferrer" className="nav-cta-btn">
+          <a href="https://unstop.com/p/code-yudh-battle-of-codes-chandigarh-university-cu-ajitgarh-punjab-1762892" target="_blank" rel="noopener noreferrer" className="nav-cta-btn">
             <span>REGISTER</span>
           </a>
           <button className="mobile-menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>

@@ -34,25 +34,25 @@ const Evaluation = () => {
               <li>
                 <div>
                   <strong>Innovation</strong>
-                  How innovative is the proposed solution?
+                  Originality of the idea.
                 </div>
               </li>
               <li>
                 <div>
                   <strong>Feasibility</strong>
-                  Can the solution realistically be developed and implemented?
+                  Practicality of development.
                 </div>
               </li>
               <li>
                 <div>
                   <strong>Technical Approach</strong>
-                  How effectively does the technology approach address the problem?
+                  Effectiveness of the tech stack.
                 </div>
               </li>
               <li>
                 <div>
                   <strong>Potential Impact</strong>
-                  What potential impact can the proposed solution create?
+                  Value created by the solution.
                 </div>
               </li>
             </ul>
@@ -71,25 +71,25 @@ const Evaluation = () => {
               <li>
                 <div>
                   <strong>Innovation</strong>
-                  The originality and innovative nature of the solution.
+                  Originality of the final product.
                 </div>
               </li>
               <li>
                 <div>
                   <strong>Implementation</strong>
-                  How effectively the proposed solution has been developed.
+                  Effectiveness of development.
                 </div>
               </li>
               <li>
                 <div>
                   <strong>Functionality</strong>
-                  The functionality and demonstration of the developed prototype.
+                  Working prototype demonstration.
                 </div>
               </li>
               <li>
                 <div>
                   <strong>Impact</strong>
-                  The potential impact of the final solution on real-world problems.
+                  Real-world usefulness.
                 </div>
               </li>
             </ul>
