@@ -1,6 +1,4 @@
 import React from 'react';
-import { PortalFieldCollection } from '@designcodeio/threeui';
-import '@designcodeio/threeui/style.css';
 import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -18,18 +16,6 @@ function App() {
   return (
     <div>
       <Preloader />
-      <div className="shader-frame">
-        <PortalFieldCollection
-          speed={1.00}
-          size={1.00}
-          length={1.00}
-          density={1.00}
-          opacity={0.025}
-          hue={-195}
-          saturation={1.4}
-          brightness={1.2}
-        />
-      </div>
       <Navbar />
       <main>
         <Hero />
