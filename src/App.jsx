@@ -1,6 +1,7 @@
 import React from 'react';
 import { PortalFieldCollection } from '@designcodeio/threeui';
 import '@designcodeio/threeui/style.css';
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,6 +17,7 @@ import './index.css';
 function App() {
   return (
     <div>
+      <Preloader />
       <div className="shader-frame">
         <PortalFieldCollection
           speed={1.00}

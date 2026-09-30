@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CULogo from '../assets/CU Logo red &white.png';
 
 const AncientOrnament = () => (
   <img src="/footer-divider.png" alt="Ancient Divider" className="ancient-ornament" />
@@ -30,8 +31,14 @@ const Footer = () => {
       <div className="footer-inner">
         {/* Brand */}
         <div>
-          <div className="footer-brand-name">Code Yudh</div>
-          <div className="footer-brand-sub">The Ultimate Battle</div>
+          <div className="footer-cu-brand">
+            <img src={CULogo} alt="Chandigarh University" className="footer-cu-logo" />
+            <div className="footer-cu-divider" />
+            <div>
+              <div className="footer-brand-name">Code Yudh</div>
+              <div className="footer-brand-sub">The Ultimate Battle</div>
+            </div>
+          </div>
           <p className="footer-desc">
             A 24-hour software development hackathon organized by the Department of Computer Science and Engineering, Chandigarh University. Enter the arena. Build. Solve. Innovate.
           </p>
