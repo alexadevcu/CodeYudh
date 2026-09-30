@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaInstagram } from 'react-icons/fa6';
 import CULogo from '../assets/CU Logo red &white.png';
 
 const AncientOrnament = () => (
@@ -51,6 +52,26 @@ const Footer = () => {
           <p className="footer-desc">
             A 24-hour software development hackathon organized by the Department of Computer Science and Engineering, Chandigarh University. Enter the arena. Build. Solve. Innovate.
           </p>
+
+          <div className="footer-social-wrapper">
+            <span className="footer-social-title">War Transmissions</span>
+            <a 
+              href="https://www.instagram.com/codeyudh_cu?stkn=bmwyMnNjeGdnOWFx" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="footer-instagram-btn"
+              aria-label="Code Yudh Instagram"
+            >
+              <div className="footer-instagram-icon-box">
+                <FaInstagram className="footer-instagram-icon" />
+              </div>
+              <div className="footer-instagram-text">
+                <span className="footer-instagram-label">Instagram</span>
+                <span className="footer-instagram-handle">@codeyudh_cu</span>
+              </div>
+              <span className="footer-instagram-arrow">↗</span>
+            </a>
+          </div>
         </div>
 
         {/* Quick Links */}
