@@ -40,11 +40,17 @@ const About = () => {
 
   // Horizontal GSAP scroll for journey
   useLayoutEffect(() => {
+    // The pinned horizontal journey is intentionally desktop-only.
+    // On phones/tablets it becomes a normal responsive row that can be
+    // scrolled horizontally without hijacking the page scroll.
+    if (window.matchMedia('(max-width: 768px)').matches) return;
+
     const ctx = gsap.context(() => {
       const getScrollAmount = () => {
         if (!scrollSectionRef.current) return 0;
         return -(scrollSectionRef.current.scrollWidth - window.innerWidth + 80);
       };
+
       gsap.to(scrollSectionRef.current, {
         x: getScrollAmount,
         ease: 'none',
@@ -53,11 +59,12 @@ const About = () => {
           pin: true,
           scrub: 1.2,
           start: 'center center',
-          end: () => `+=${getScrollAmount() * -1}`,
+          end: () => `+=${Math.max(1, getScrollAmount() * -1)}`,
           invalidateOnRefresh: true,
         }
       });
     }, containerRef);
+
     return () => ctx.revert();
   }, []);
 

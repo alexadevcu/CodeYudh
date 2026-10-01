@@ -121,7 +121,7 @@ const Timeline = () => {
     <section id="timeline" ref={sectionRef}>
       <div className="glow-line" />
       <div className="section">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '80px', alignItems: 'start' }}>
+        <div className="timeline-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '80px', alignItems: 'start' }}>
           {/* Left */}
           <div className="timeline-left-panel">
             <p className="section-label">Key Dates</p>
