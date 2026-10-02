@@ -140,12 +140,12 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.55 }}
             >
               <p className="hero-subtitle">THE ULTIMATE 24-HOUR BATTLE OF CODE &amp; INNOVATION</p>
-              <p className="hero-subtitle" style={{ fontSize: '0.6rem', color: 'rgba(200, 190, 165, 0.75)', marginTop: '4px' }}>Organized by Department of CSE – Takshashila &nbsp;•&nbsp; Chandigarh University</p>
-              <div className="hero-date-line">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <p className="hero-subtitle" style={{ fontSize: '0.9rem', color: '#f0ece4', marginTop: '12px', fontWeight: '500', letterSpacing: '1px' }}>Organized by Department of CSE – Takshashila &nbsp;•&nbsp; Chandigarh University</p>
+              <div className="hero-date-line" style={{ color: '#f3dfa2', fontWeight: '600', marginTop: '8px' }}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" />
                 </svg>
-                <span>OCT 27 – 28, 2026 &nbsp;·&nbsp; CHANDIGARH UNIVERSITY</span>
+                <span style={{ fontSize: '0.9rem' }}>OCT 27 – 28, 2026 &nbsp;·&nbsp; CHANDIGARH UNIVERSITY</span>
               </div>
             </motion.div>
           </div>
@@ -163,9 +163,9 @@ const Hero = () => {
             <div className="hud-bracket hud-bracket-bl" />
             <div className="hud-bracket hud-bracket-br" />
 
-            <div className="hud-label-wrap">
+            <div className="hud-label-wrap" style={{ marginBottom: '16px' }}>
               <span className="hud-label-line"></span>
-              <p className="hud-label">SYSTEM ONLINE // T-MINUS</p>
+              <p className="hud-label" style={{ color: '#fff', fontWeight: 'bold', letterSpacing: '3px', fontSize: '0.85rem' }}>SYSTEM ONLINE // T-MINUS</p>
               <span className="hud-label-line"></span>
             </div>
 

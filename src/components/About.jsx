@@ -40,12 +40,10 @@ const About = () => {
 
   // Horizontal GSAP scroll for journey
   useLayoutEffect(() => {
-    // The pinned horizontal journey is intentionally desktop-only.
-    // On phones/tablets it becomes a normal responsive row that can be
-    // scrolled horizontally without hijacking the page scroll.
-    if (window.matchMedia('(max-width: 768px)').matches) return;
+    let mm = gsap.matchMedia();
 
-    const ctx = gsap.context(() => {
+    mm.add("(min-width: 769px)", () => {
+      // The pinned horizontal journey is strictly desktop-only.
       const getScrollAmount = () => {
         if (!scrollSectionRef.current) return 0;
         return -(scrollSectionRef.current.scrollWidth - window.innerWidth + 80);
@@ -63,9 +61,9 @@ const About = () => {
           invalidateOnRefresh: true,
         }
       });
-    }, containerRef);
+    });
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   return (
@@ -123,23 +121,71 @@ const About = () => {
         </div>
 
         <div className="journey-scroll-wrap" ref={scrollSectionRef}>
-          
+
           <div className="journey-card">
-            <div className="j-time">Phase 1</div>
-            <h3 className="j-title">Idea Submission</h3>
-            <p className="j-desc">Submit your innovative ideas online based on the chosen battlefields.</p>
+            <div className="j-time">01</div>
+            <h3 className="j-title">Team Formation</h3>
+            <p className="j-desc">Assemble your elite squad of 3–4 members ready to build.</p>
           </div>
 
           <div className="journey-card">
-            <div className="j-time">Phase 2</div>
-            <h3 className="j-title">Evaluation</h3>
-            <p className="j-desc">Top teams will be shortlisted based on innovation, feasibility, and impact.</p>
+            <div className="j-time">02</div>
+            <h3 className="j-title">Idea &amp; Problem ID</h3>
+            <p className="j-desc">Identify a real-world problem to solve with technology.</p>
           </div>
 
           <div className="journey-card">
-            <div className="j-time">24-Hour Sprint</div>
-            <h3 className="j-title">The Grand Finale</h3>
-            <p className="j-desc">Shortlisted teams battle it out in a 24-hour offline coding marathon at Chandigarh University.</p>
+            <div className="j-time">03</div>
+            <h3 className="j-title">PPT Submission</h3>
+            <p className="j-desc">Submit your solution and technology approach for screening.</p>
+          </div>
+
+          <div className="journey-card">
+            <div className="j-time">04</div>
+            <h3 className="j-title">Screening</h3>
+            <p className="j-desc">Expert panel evaluates your proposed solution and idea.</p>
+          </div>
+
+          <div className="journey-card">
+            <div className="j-time">05</div>
+            <h3 className="j-title">Shortlisting</h3>
+            <p className="j-desc">Top teams are selected to compete in the offline finale.</p>
+          </div>
+
+          <div className="journey-card journey-card--hot">
+            <div className="j-time">06</div>
+            <h3 className="j-title">Offline Hackathon</h3>
+            <p className="j-desc">Arrive at Chandigarh University. The 24-hour battle begins.</p>
+          </div>
+
+          <div className="journey-card">
+            <div className="j-time">07</div>
+            <h3 className="j-title">Build</h3>
+            <p className="j-desc">Transform your proposed idea into a working solution.</p>
+          </div>
+
+          <div className="journey-card">
+            <div className="j-time">08</div>
+            <h3 className="j-title">Test</h3>
+            <p className="j-desc">Test your implementation and identify issues early on.</p>
+          </div>
+
+          <div className="journey-card">
+            <div className="j-time">09</div>
+            <h3 className="j-title">Refine</h3>
+            <p className="j-desc">Improve your solution based on testing and mentor feedback.</p>
+          </div>
+
+          <div className="journey-card">
+            <div className="j-time">10</div>
+            <h3 className="j-title">Demonstrate</h3>
+            <p className="j-desc">Present your functional prototype to the judging panel.</p>
+          </div>
+
+          <div className="journey-card journey-card--hot">
+            <div className="j-time">11</div>
+            <h3 className="j-title">Final Evaluation</h3>
+            <p className="j-desc">Judged on innovation, implementation, and real-world impact.</p>
           </div>
 
         </div>
