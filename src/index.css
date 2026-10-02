@@ -368,7 +368,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 9999;
   }
   .floating-nav-pill { padding: 8px 12px; gap: 8px; }
-  .nav-cu-logo { height: 46px; }
+  .nav-cu-logo { height: 46px !important; }
   .nav-logo-arrow { height: 16px; }
   .nav-logo-text { font-size: 0.8rem; }
   .nav-cta-btn { padding: 6px 10px; font-size: 0.7rem; }
@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 450px) {
-  .nav-cu-logo { height: 42px; }
+  .nav-cu-logo { height: 42px !important; }
   .nav-logo-text { font-size: 0.65rem; letter-spacing: 1px; }
   .floating-nav-container { padding: 0 10px; }
   .nav-cta-btn { padding: 5px 8px; font-size: 0.6rem; letter-spacing: 1px; }
