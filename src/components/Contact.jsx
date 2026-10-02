@@ -173,7 +173,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 style={{ fontFamily: 'var(--font-heading)', color: '#fff', fontSize: '1.1rem' }}>Email Us</h4>
-                  <a href="mailto:hello@codeyudh.com" style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.target.style.color = 'var(--gold-300)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-muted)'}>hello@codeyudh.com</a>
+                  <a href="mailto:codeyudh.cu@gmail.com" style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.target.style.color = 'var(--gold-300)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-muted)'}>codeyudh.cu@gmail.com</a>
                 </div>
               </div>
 
@@ -188,6 +188,24 @@ const Contact = () => {
                 <div>
                   <h4 style={{ fontFamily: 'var(--font-heading)', color: '#fff', fontSize: '1.1rem' }}>Location</h4>
                   <p style={{ color: 'var(--text-muted)', margin: 0 }}>Chandigarh University, NH-95<br/>Punjab 140413</p>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                <div style={{ 
+                  width: '50px', height: '50px', borderRadius: '12px', 
+                  background: 'rgba(245, 183, 54, 0.1)', border: '1px solid rgba(245, 183, 54, 0.2)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--gold-300)'
+                }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <div>
+                  <h4 style={{ fontFamily: 'var(--font-heading)', color: '#fff', fontSize: '1.1rem' }}>Instagram</h4>
+                  <a href="https://instagram.com/codeyudh" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.target.style.color = 'var(--gold-300)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-muted)'}>@codeyudh</a>
                 </div>
               </div>
 
