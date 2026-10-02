@@ -209,7 +209,7 @@ const Contact = () => {
                 style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}
               >
                 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+                <div className="contact-name-email-row">
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <label htmlFor="name" style={{ fontFamily: 'var(--font-heading)', color: '#fff', fontSize: '0.95rem', fontWeight: '600', letterSpacing: '0.5px' }}>NAME</label>
                     <input 
