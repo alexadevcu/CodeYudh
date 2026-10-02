@@ -27,26 +27,31 @@ function App() {
 
 
   useEffect(() => {
-    // Initialize Lenis for smooth scrolling
-    const lenis = new Lenis({
-      lerp: 0.08, // Slightly lower lerp for a "heavier", smoother momentum feel
-      wheelMultiplier: 0.85, // Reduced from 1.2 to 0.85 to slow down the raw scroll speed
-      smoothWheel: true,
-      syncTouch: true,
-      touchMultiplier: 2,
-    });
+    // Initialize Lenis for smooth scrolling ONLY on desktop (disable on mobile for native performance)
+    let lenis;
+    if (window.innerWidth > 768) {
+      lenis = new Lenis({
+        lerp: 0.08, // Slightly lower lerp for a "heavier", smoother momentum feel
+        wheelMultiplier: 0.85, // Reduced from 1.2 to 0.85 to slow down the raw scroll speed
+        smoothWheel: true,
+        smoothTouch: false,
+        syncTouch: false,
+      });
 
-    lenis.on('scroll', ScrollTrigger.update);
+      lenis.on('scroll', ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
 
-    gsap.ticker.lagSmoothing(0);
+      gsap.ticker.lagSmoothing(0);
+    }
 
     return () => {
-      gsap.ticker.remove(lenis.raf);
-      lenis.destroy();
+      if (lenis) {
+        gsap.ticker.remove(lenis.raf);
+        lenis.destroy();
+      }
     };
   }, []);
 
