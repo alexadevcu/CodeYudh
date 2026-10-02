@@ -72,7 +72,7 @@ const About = () => {
 
       {/* ─── CLEAN PREMIUM ABOUT ─── */}
       <div className="section about-clean-container">
-        
+
         {/* Top Centered Header */}
         <div className="about-clean-header">
           <p className="bento-label" style={{ textAlign: 'center', marginBottom: '20px' }}>About the Event</p>
@@ -90,8 +90,8 @@ const About = () => {
         {/* 2x2 Stats Grid */}
         <div className="about-clean-stats">
           {stats.map((s, i) => (
-            <motion.div 
-              className="stat-clean-card" 
+            <motion.div
+              className="stat-clean-card"
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ const About = () => {
 
           <div className="journey-card">
             <div className="j-time">02</div>
-            <h3 className="j-title">Idea &amp; Problem ID</h3>
+            <h3 className="j-title">Idea &amp; Problem Submission</h3>
             <p className="j-desc">Identify a real-world problem to solve with technology.</p>
           </div>
 

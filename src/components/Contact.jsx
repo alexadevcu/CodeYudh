@@ -197,12 +197,11 @@ const Contact = () => {
           {/* Right Column - Form */}
           <div ref={rightRef}>
             <div style={{
-              background: 'rgba(20, 16, 11, 0.4)',
+              background: 'rgba(20, 16, 11, 0.85)',
               border: '1px solid rgba(245, 183, 54, 0.15)',
               borderRadius: '24px',
               padding: '40px',
-              backdropFilter: 'blur(10px)',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+              boxShadow: '0 10px 30px rgba(0,0,0,0.4)'
             }}>
               <form 
                 onSubmit={onSubmit}
@@ -210,18 +209,18 @@ const Contact = () => {
                 style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}
               >
                 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <label htmlFor="name" style={{ fontFamily: 'var(--font-heading)', color: '#fff', fontSize: '0.95rem', fontWeight: '600', letterSpacing: '0.5px' }}>NAME</label>
                     <input 
                       type="text" name="name" id="name" required placeholder="John Doe"
                       style={{
-                        padding: '14px 18px', background: 'rgba(255, 255, 255, 0.03)',
+                        padding: '14px 18px', background: 'rgba(255, 255, 255, 0.05)',
                         border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '8px',
                         color: '#fff', fontFamily: 'var(--font-body)', outline: 'none', transition: 'all 0.3s ease',
                       }}
-                      onFocus={(e) => { e.target.style.borderColor = 'rgba(245, 183, 54, 0.5)'; e.target.style.background = 'rgba(255, 255, 255, 0.05)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'; e.target.style.background = 'rgba(255, 255, 255, 0.03)'; }}
+                      onFocus={(e) => { e.target.style.borderColor = 'rgba(245, 183, 54, 0.5)'; e.target.style.background = 'rgba(255, 255, 255, 0.08)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'; e.target.style.background = 'rgba(255, 255, 255, 0.05)'; }}
                     />
                   </div>
 
@@ -230,12 +229,12 @@ const Contact = () => {
                     <input 
                       type="email" name="email" id="email" required placeholder="john@example.com"
                       style={{
-                        padding: '14px 18px', background: 'rgba(255, 255, 255, 0.03)',
+                        padding: '14px 18px', background: 'rgba(255, 255, 255, 0.05)',
                         border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '8px',
                         color: '#fff', fontFamily: 'var(--font-body)', outline: 'none', transition: 'all 0.3s ease',
                       }}
-                      onFocus={(e) => { e.target.style.borderColor = 'rgba(245, 183, 54, 0.5)'; e.target.style.background = 'rgba(255, 255, 255, 0.05)'; }}
-                      onBlur={(e) => { e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'; e.target.style.background = 'rgba(255, 255, 255, 0.03)'; }}
+                      onFocus={(e) => { e.target.style.borderColor = 'rgba(245, 183, 54, 0.5)'; e.target.style.background = 'rgba(255, 255, 255, 0.08)'; }}
+                      onBlur={(e) => { e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'; e.target.style.background = 'rgba(255, 255, 255, 0.05)'; }}
                     />
                   </div>
                 </div>
@@ -245,12 +244,12 @@ const Contact = () => {
                   <input 
                     type="text" name="university" id="university" required placeholder="Chandigarh University"
                     style={{
-                      padding: '14px 18px', background: 'rgba(255, 255, 255, 0.03)',
+                      padding: '14px 18px', background: 'rgba(255, 255, 255, 0.05)',
                       border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '8px',
                       color: '#fff', fontFamily: 'var(--font-body)', outline: 'none', transition: 'all 0.3s ease',
                     }}
-                    onFocus={(e) => { e.target.style.borderColor = 'rgba(245, 183, 54, 0.5)'; e.target.style.background = 'rgba(255, 255, 255, 0.05)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'; e.target.style.background = 'rgba(255, 255, 255, 0.03)'; }}
+                    onFocus={(e) => { e.target.style.borderColor = 'rgba(245, 183, 54, 0.5)'; e.target.style.background = 'rgba(255, 255, 255, 0.08)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'; e.target.style.background = 'rgba(255, 255, 255, 0.05)'; }}
                   />
                 </div>
 
@@ -259,12 +258,12 @@ const Contact = () => {
                   <textarea 
                     name="message" id="message" required rows="4" placeholder="How can we help you?"
                     style={{
-                      padding: '14px 18px', background: 'rgba(255, 255, 255, 0.03)',
+                      padding: '14px 18px', background: 'rgba(255, 255, 255, 0.05)',
                       border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '8px',
                       color: '#fff', fontFamily: 'var(--font-body)', outline: 'none', transition: 'all 0.3s ease', resize: 'vertical',
                     }}
-                    onFocus={(e) => { e.target.style.borderColor = 'rgba(245, 183, 54, 0.5)'; e.target.style.background = 'rgba(255, 255, 255, 0.05)'; }}
-                    onBlur={(e) => { e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'; e.target.style.background = 'rgba(255, 255, 255, 0.03)'; }}
+                    onFocus={(e) => { e.target.style.borderColor = 'rgba(245, 183, 54, 0.5)'; e.target.style.background = 'rgba(255, 255, 255, 0.08)'; }}
+                    onBlur={(e) => { e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)'; e.target.style.background = 'rgba(255, 255, 255, 0.05)'; }}
                   ></textarea>
                 </div>
 

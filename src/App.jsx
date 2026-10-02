@@ -5,6 +5,7 @@ import Lenis from 'lenis';
 import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Marquee from './components/Marquee';
 import About from './components/About';
 import Tracks from './components/Tracks';
 import Tech from './components/Tech';
@@ -12,6 +13,7 @@ import Evaluation from './components/Evaluation';
 import Participate from './components/Participate';
 import Rewards from './components/Rewards';
 import Outcomes from './components/Outcomes';
+import Sponsors from './components/Sponsors';
 import Partners from './components/Partners';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
@@ -55,12 +57,14 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <Marquee />
         <About />
         <Tracks />
         <Tech />
         <Evaluation />
         <Participate />
         <Rewards />
+        <Sponsors />
         <Partners />
         <FAQ />
         <CTA />

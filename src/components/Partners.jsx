@@ -4,12 +4,18 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 import alexaLogo from '../assets/clubs/Alexa Developers community.png';
 import gfgLogo from '../assets/clubs/GeekForGeeks Student chapters.png';
+import ieteLogo from '../assets/clubs/IETE Club.png';
+import csiLogo from '../assets/clubs/Computer Society of India.png';
+import idcLogo from '../assets/clubs/Indian Data club.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const partners = [
   { name: 'Alexa Developers Community', logo: alexaLogo, desc: 'Empowering students with Voice AI and cloud technology.' },
   { name: 'GeeksForGeeks Student Chapter', logo: gfgLogo, desc: 'Fostering a coding culture and technical excellence.' },
+  { name: 'IETE Club', logo: ieteLogo, desc: 'Advancing electronics, telecommunication and IT disciplines.' },
+  { name: 'Computer Society of India', logo: csiLogo, desc: 'Connecting IT professionals and fostering technical research.' },
+  { name: 'Indian Data Club', logo: idcLogo, desc: 'Exploring data science, analytics, and machine learning.' },
 ];
 
 const Partners = () => {
@@ -69,7 +75,7 @@ const Partners = () => {
               className="partner-premium-card"
               style={{
                 width: '100%',
-                maxWidth: '400px',
+                maxWidth: '320px',
                 background: 'rgba(20, 16, 11, 0.4)',
                 border: '1px solid rgba(245, 183, 54, 0.15)',
                 borderRadius: '24px',

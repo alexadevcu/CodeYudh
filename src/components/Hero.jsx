@@ -139,13 +139,13 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.55 }}
             >
-              <p className="hero-subtitle">THE ULTIMATE 24-HOUR BATTLE OF CODE &amp; INNOVATION</p>
-              <p className="hero-subtitle" style={{ fontSize: '0.9rem', color: '#f0ece4', marginTop: '12px', fontWeight: '500', letterSpacing: '1px' }}>Organized by Department of CSE – Takshashila &nbsp;•&nbsp; Chandigarh University</p>
-              <div className="hero-date-line" style={{ color: '#f3dfa2', fontWeight: '600', marginTop: '8px' }}>
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <p className="hero-subtitle" style={{ color: '#FFFFFF', fontWeight: '800', textShadow: '0 0 4px #000000, 0 0 12px #000000, 0 0 20px #000000' }}>THE ULTIMATE 24-HOUR BATTLE OF CODE &amp; INNOVATION</p>
+              <p className="hero-subtitle" style={{ fontSize: '0.9rem', color: '#FFFFFF', marginTop: '12px', fontWeight: '800', letterSpacing: '1px', textShadow: '0 0 4px #000000, 0 0 12px #000000, 0 0 20px #000000' }}>Organized by Department of CSE – Takshashila &nbsp;•&nbsp; Chandigarh University</p>
+              <div className="hero-date-line" style={{ color: '#FFFFFF', fontWeight: '900', marginTop: '10px', display: 'flex', alignItems: 'center', gap: '8px', textShadow: '0 0 4px #000000, 0 0 12px #000000, 0 0 20px #000000' }}>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F5B736" strokeWidth="3" style={{ filter: 'drop-shadow(0 0 4px #000000) drop-shadow(0 0 8px #000000)' }}>
                   <rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" />
                 </svg>
-                <span style={{ fontSize: '0.9rem' }}>OCT 27 – 28, 2026 &nbsp;·&nbsp; CHANDIGARH UNIVERSITY</span>
+                <span style={{ fontSize: '0.95rem' }}>OCT 27 – 28, 2026 &nbsp;·&nbsp; CHANDIGARH UNIVERSITY</span>
               </div>
             </motion.div>
           </div>
@@ -165,7 +165,7 @@ const Hero = () => {
 
             <div className="hud-label-wrap" style={{ marginBottom: '16px' }}>
               <span className="hud-label-line"></span>
-              <p className="hud-label" style={{ color: '#fff', fontWeight: 'bold', letterSpacing: '3px', fontSize: '0.85rem' }}>SYSTEM ONLINE // T-MINUS</p>
+              <p className="hud-label" style={{ color: '#FFFFFF', fontWeight: '900', letterSpacing: '3px', fontSize: '0.85rem', textShadow: '0 0 4px #000000, 0 0 12px #000000, 0 0 20px #000000' }}>SYSTEM ONLINE // T-MINUS</p>
               <span className="hud-label-line"></span>
             </div>
 
