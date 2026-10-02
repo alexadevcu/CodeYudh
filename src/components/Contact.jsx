@@ -49,7 +49,7 @@ const Contact = () => {
     setIsSubmitting(true);
     setResult("Sending transmission...");
     const formData = new FormData(event.target);
-    formData.append("access_key", "57287bb1-abd0-4fc6-9ef5-e2dc1c994317");
+    formData.append("access_key", "f2239bf2-91b4-4807-8760-ea1fc4b48a90");
     formData.append("subject", "New Submission from Code Yudh Website");
 
     try {
@@ -157,7 +157,7 @@ const Contact = () => {
               <div className="section-eyebrow">Get in Touch</div>
               <h2 className="section-title" style={{ marginTop: '10px', fontSize: '2.5rem' }}>Let's Talk <span className="gold-text" style={{ fontStyle: 'italic' }}>Code</span></h2>
               <p className="section-lead" style={{ marginTop: '20px', fontSize: '1.1rem', maxWidth: '400px' }}>
-                Have questions about Code Yudh? Whether it's about tracks, evaluation, or sponsorship opportunities, our team is here to help.
+                Have questions about Code Yudh? Whether it's about domains, evaluation, or sponsorship opportunities, our team is here to help.
               </p>
             </div>
 

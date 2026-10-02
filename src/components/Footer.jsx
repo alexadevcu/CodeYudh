@@ -133,7 +133,7 @@ const Footer = () => {
           <ul className="footer-links">
             <li><a href="#about" onClick={(e) => handleScrollTo(e, 'about')} className="interactive-link">About</a></li>
             <li><a href="#timeline" onClick={(e) => handleScrollTo(e, 'timeline')} className="interactive-link">Timeline</a></li>
-            <li><a href="#tracks" onClick={(e) => handleScrollTo(e, 'tracks')} className="interactive-link">Tracks</a></li>
+            <li><a href="#domains" onClick={(e) => handleScrollTo(e, 'domains')} className="interactive-link">Domains</a></li>
             <li><a href="#evaluation" onClick={(e) => handleScrollTo(e, 'evaluation')} className="interactive-link">Evaluation</a></li>
             <li><a href="#outcomes" onClick={(e) => handleScrollTo(e, 'outcomes')} className="interactive-link">Eligibility & Outcomes</a></li>
             <li><a href="#faq" onClick={(e) => handleScrollTo(e, 'faq')} className="interactive-link">FAQ</a></li>

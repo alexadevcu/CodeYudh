@@ -40,8 +40,8 @@ const CTA = () => {
             <a href="https://unstop.com/p/code-yudh-battle-of-codes-chandigarh-university-cu-ajitgarh-punjab-1762892" target="_blank" rel="noopener noreferrer">
               <button className="btn-primary">Register Now</button>
             </a>
-            <a href="#tracks">
-              <button className="btn-outline">Explore Tracks →</button>
+            <a href="#domains">
+              <button className="btn-outline">Explore Domains →</button>
             </a>
           </div>
 

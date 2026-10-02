@@ -140,7 +140,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.55 }}
             >
               <p className="hero-subtitle" style={{ color: '#FFFFFF', fontWeight: '800', textShadow: '0 0 4px #000000, 0 0 12px #000000, 0 0 20px #000000' }}>THE ULTIMATE 24-HOUR BATTLE OF CODE &amp; INNOVATION</p>
-              <p className="hero-subtitle" style={{ fontSize: '0.9rem', color: '#FFFFFF', marginTop: '12px', fontWeight: '800', letterSpacing: '1px', textShadow: '0 0 4px #000000, 0 0 12px #000000, 0 0 20px #000000' }}>Organized by Department of CSE – Takshashila &nbsp;•&nbsp; Chandigarh University</p>
+              <p className="hero-subtitle" style={{ fontSize: '0.9rem', color: '#FFFFFF', marginTop: '12px', fontWeight: '800', letterSpacing: '1px', textShadow: '0 0 4px #000000, 0 0 12px #000000, 0 0 20px #000000' }}>Organized by Department of CSE – Takshashila</p>
               <div className="hero-date-line" style={{ color: '#FFFFFF', fontWeight: '900', marginTop: '10px', display: 'flex', alignItems: 'center', gap: '8px', textShadow: '0 0 4px #000000, 0 0 12px #000000, 0 0 20px #000000' }}>
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F5B736" strokeWidth="3" style={{ filter: 'drop-shadow(0 0 4px #000000) drop-shadow(0 0 8px #000000)' }}>
                   <rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" />
@@ -218,8 +218,8 @@ const Hero = () => {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </MagneticButton>
-            <MagneticButton className="btn-ghost" onClick={() => scrollToSection('tracks')}>
-              EXPLORE TRACKS
+            <MagneticButton className="btn-ghost" onClick={() => scrollToSection('domains')}>
+              EXPLORE DOMAINS
             </MagneticButton>
           </motion.div>
 

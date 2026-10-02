@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const stats = [
   { value: 24, suffix: 'H', label: 'Development Sprint', desc: 'Non-stop coding marathon.' },
   { value: 4, prefix: '3–', suffix: '', label: 'Team Size', desc: 'Members per team.' },
-  { value: 6, suffix: '', label: 'Challenge Tracks', desc: 'Across critical domains.' },
+  { value: 6, suffix: '', label: 'Challenge Domains', desc: 'Across critical sectors.' },
   { value: 2, suffix: '', label: 'Phase Competition', desc: 'Online + Offline rounds.' },
 ];
 

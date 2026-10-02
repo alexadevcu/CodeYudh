@@ -94,14 +94,14 @@ const Tracks = () => {
   }, []);
 
   return (
-    <section id="tracks" ref={sectionRef}>
+    <section id="domains" ref={sectionRef}>
       <div className="glow-line" />
       <div className="section-full">
         <div className="section-inner">
 
           <div className="tracks-header-anim" style={{ marginBottom: '64px' }}>
             <p className="section-label">Hackathon Battlefields</p>
-            <h2 className="section-title">Choose Your Track</h2>
+            <h2 className="section-title">Choose Your Domain</h2>
             <p className="section-desc">
               Six challenge domains spanning the most pressing real-world problems. Pick your battlefield and build solutions that matter.
             </p>
