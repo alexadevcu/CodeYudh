@@ -334,7 +334,8 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
   .nav-links-mobile-active {
-    display: flex;
+    display: flex !important;
+    z-index: 9999;
   }
   .floating-nav-pill { padding: 8px 12px; gap: 8px; }
   .nav-cu-logo { height: 20px; }

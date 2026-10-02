@@ -22,20 +22,16 @@ import './index.css';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const bgRef = useRef(null);
+
 
   useEffect(() => {
     // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
+      lerp: 0.08, // Slightly lower lerp for a "heavier", smoother momentum feel
+      wheelMultiplier: 0.85, // Reduced from 1.2 to 0.85 to slow down the raw scroll speed
+      smoothWheel: true,
+      syncTouch: true,
       touchMultiplier: 2,
-      infinite: false,
     });
 
     lenis.on('scroll', ScrollTrigger.update);
@@ -46,22 +42,7 @@ function App() {
 
     gsap.ticker.lagSmoothing(0);
 
-    // Subtle parallax for the global background
-    const ctx = gsap.context(() => {
-      gsap.to(bgRef.current, {
-        y: '20vh', // Moves the background slightly down as you scroll down
-        ease: 'none',
-        scrollTrigger: {
-          trigger: document.body,
-          start: 'top top',
-          end: 'bottom bottom',
-          scrub: 1.5, // Smooth scrubbing
-        },
-      });
-    });
-
     return () => {
-      ctx.revert();
       gsap.ticker.remove(lenis.raf);
       lenis.destroy();
     };
@@ -69,7 +50,7 @@ function App() {
 
   return (
     <div>
-      <div className="global-bg" ref={bgRef}></div>
+      <div className="global-bg"></div>
       <Preloader />
       <Navbar />
       <main>
