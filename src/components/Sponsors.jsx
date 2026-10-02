@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-import hackhaltLogo from '../assets/sponsers/HackHalt.jpeg';
-import unstopLogo from '../assets/sponsers/Unstop.png';
-import truscholarLogo from '../assets/sponsers/truscholar.png';
+import hackhaltLogo from '../assets/Sponsers/HackHalt.jpeg';
+import unstopLogo from '../assets/Sponsers/Unstop.png';
+import truscholarLogo from '../assets/Sponsers/truscholar.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
