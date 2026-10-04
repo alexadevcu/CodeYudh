@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://codeyudh-at-cu.vercel.app/sitemap.xml
